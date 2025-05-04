@@ -1,33 +1,64 @@
-# 🖱️ ClickGuard
+# 🛡️ ClickGuard - Advanced Click Behavior Monitor
 
-**ClickGuard** is an advanced Windows-based click monitoring tool for personal and educational use. It detects unnatural clicking patterns such as autoclickers, jitterclicks, and butterfly clicks with high precision, while also identifying suspicious background software.
+Welcome to **ClickGuard**, a powerful and privacy-conscious tool designed to detect abnormal mouse activity such as autoclickers, jitterclicks, butterfly clicks, and scripted macros.
 
----
+ClickGuard is ideal for gamers, developers, and curious tinkerers who want to analyze click behavior, test hardware, or investigate external input automation — all while ensuring your logs are encrypted, hidden, and optionally reported via Discord webhooks.
 
-## 🔍 Features
+## 🚀 Features
 
-- ✅ Real-time click monitoring with CPS (Clicks Per Second)
-- 🚨 Detects:
-  - Jitterclicking
-  - Butterfly clicking
-  - Autoclickers and macro patterns
-- 🔐 Encrypted and hidden local logging (Fernet AES)
-- 📤 Sends a full report to a Discord webhook on shutdown
-- 🧠 Identifies constant timing intervals or known macro delays
-- 🖥️ Includes PC name and public IP in the final report
-- 🛑 Exits cleanly using the `F8` key
-- 🕵️ Lists suspicious background processes (ex: `razer`, `xmouse`, `autohotkey`)
+- 🔍 **Real-time Click Monitoring** – Tracks click intervals, CPS (Clicks Per Second), and patterns.
+- ⚠️ **Suspicious Behavior Detection** – Identifies:
+  - Abnormally high CPS
+  - Consistent click delays (potential macro usage)
+  - Common automation intervals (e.g., 100.0 ms)
+  - Special clicking patterns like *butterfly* and *jitterclick*
+- 🔐 **Encrypted and Hidden Logs** – All logs are encrypted using a custom key (`SPARTA.1st`) and stored in a hidden file under `%APPDATA%`.
+- 🌐 **Webhook Integration** – Summarized logs are sent via Discord webhook with machine name, IP address, and suspicious data.
+- 🧪 **Offline Analysis Ready** – Log files can be decrypted and reviewed later.
+- 🔒 **Keybind Controlled** – Application exit is triggered using `F8` to prevent accidental termination.
 
----
+## 📝 Requirements
 
-## 🛡️ Security
+- Python 3.8+
+- Modules:
+  - `pynput`
+  - `colorama`
+  - `psutil`
+  - `cryptography`
+  - `requests`
 
-All logs are encrypted and saved to a hidden file in the system using a fixed encryption key (`SPARTA.1st`) for local-only usage. This ensures privacy and tamper protection.
+Install dependencies with:
 
----
+```bash
+pip install -r requirements.txt
+```
 
-## ⚙️ How to Use
+## ▶️ How to Run
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/sparta1st/SPClickGuard.git
+```bash
+python bot.py
+```
+
+To build an executable:
+
+```bash
+pyinstaller --onefile --noconsole --icon=icon.ico bot.py
+```
+
+## 📁 Encrypted Logs
+
+Logs are saved in:
+```
+%APPDATA%\.hidden_log.dat
+```
+
+To decrypt logs, use the same `SPARTA.1st` key with the included decryptor script.
+
+## 🤖 Disclaimer
+
+> This tool is intended **for educational, personal testing, and debugging purposes only.**  
+> Any misuse for violating terms of service, spying, or cheating in games is strongly discouraged.
+
+## 📥 License
+
+MIT License – you're free to use, modify, and distribute, with proper credit.
