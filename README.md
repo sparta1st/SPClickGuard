@@ -30,4 +30,4 @@ All logs are encrypted and saved to a hidden file in the system using a fixed en
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/ClickGuard.git
+   git clone https://github.com/sparta1st/SPClickGuard.git
