@@ -27,12 +27,6 @@ ClickGuard is ideal for gamers, developers, and curious tinkerers who want to an
   - `cryptography`
   - `requests`
 
-Install dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
-
 ## ▶️ How to Run
 
 ```bash
